@@ -1,0 +1,1 @@
+export const PRODUCTS_LIMIT_PER_PAGE = 8;
