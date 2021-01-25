@@ -16,7 +16,13 @@ const ProductsInitialState: ProductsState = {
   list: [],
   isLoading: false,
   error: null,
-  reqParams: {},
+  reqParams: {
+    search: '',
+    limit: 3,
+    page: 1,
+    promo: undefined,
+    active: undefined
+  },
 };
 
 const productsSlice = createSlice({
@@ -37,6 +43,24 @@ const productsSlice = createSlice({
         search: action.payload,
       };
     },
+    setActiveParam(state, action: PayloadAction<boolean>) {
+      state.reqParams = {
+        ...state.reqParams,
+        active: action.payload,
+      };
+    },
+    setPromoParam(state, action: PayloadAction<boolean>) {
+      state.reqParams = {
+        ...state.reqParams,
+        promo: action.payload,
+      };
+    },
+    setPageParam(state, action: PayloadAction<number>) {
+      state.reqParams = {
+        ...state.reqParams,
+        page: action.payload,
+      };
+    },
   }
 });
 
@@ -44,7 +68,10 @@ export const {
   getProductsStart,
   getProductsSuccess,
   getProductsFailure,
-  setSearchParam
+  setSearchParam,
+  setActiveParam,
+  setPromoParam,
+  setPageParam
 } = productsSlice.actions;
 
 export default productsSlice.reducer;
