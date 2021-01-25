@@ -8,6 +8,7 @@ import { RootState } from 'store/rootReducer';
 import { GetProductsParams, Product } from 'api/products/getProducts.types';
 import { selectProducts, selectIsLoading, selectReqParams } from 'store/products/products.selectors';
 import { fetchProducts, setActiveParam, setPromoParam, setSearchParam } from 'store/products/products.slice';
+import Pagination from './components/Pagination/Pagination';
 
 export const Products = () => {
   const dispatch = useDispatch();
@@ -60,9 +61,15 @@ export const Products = () => {
       </form>
 
       {isLoading ? <div>Loading...</div> : (
-        <div>
+        <>
+          <div>
           {products.map(product=><div key={product.id}>{product.name}</div>)}
         </div>
+
+        <div>
+          <Pagination />
+        </div>
+        </>
       )}
     </>
   );

@@ -10,6 +10,10 @@ interface ProductsState {
   isLoading: boolean
   error: string | null
   reqParams: GetProductsParams
+  pageCount: number
+  pageCurrent: number
+  pageNext: string
+  pagePrev: string
 };
 
 const ProductsInitialState: ProductsState = {
@@ -23,6 +27,10 @@ const ProductsInitialState: ProductsState = {
     promo: undefined,
     active: undefined
   },
+  pageCount: 0,
+  pageCurrent: 0,
+  pageNext: '',
+  pagePrev: ''
 };
 
 const productsSlice = createSlice({
@@ -31,10 +39,14 @@ const productsSlice = createSlice({
   reducers: {
     getProductsStart: startLoading,
     getProductsSuccess(state, { payload }: PayloadAction<GetProductsResponse>) {
-      const { items } = payload;
+      const { items, meta, links } = payload;
       state.list = items;
       state.isLoading = false;
       state.error = null;
+      state.pageCount = meta.totalPages;
+      state.pageCurrent = parseInt(meta.currentPage);
+      state.pageNext = links.next;
+      state.pagePrev = links.previous;
     },
     getProductsFailure: loadingFailed,
     setSearchParam(state, action: PayloadAction<string>) {
