@@ -9,12 +9,14 @@ interface ProductsState {
   list: Product[]
   isLoading: boolean
   error: string | null
+  reqParams: GetProductsParams
 };
 
 const ProductsInitialState: ProductsState = {
   list: [],
   isLoading: false,
-  error: null
+  error: null,
+  reqParams: {},
 };
 
 const productsSlice = createSlice({
@@ -28,14 +30,21 @@ const productsSlice = createSlice({
       state.isLoading = false;
       state.error = null;
     },
-    getProductsFailure: loadingFailed
+    getProductsFailure: loadingFailed,
+    setSearchParam(state, action: PayloadAction<string>) {
+      state.reqParams = {
+        ...state.reqParams,
+        search: action.payload,
+      };
+    },
   }
 });
 
 export const {
   getProductsStart,
   getProductsSuccess,
-  getProductsFailure
+  getProductsFailure,
+  setSearchParam
 } = productsSlice.actions;
 
 export default productsSlice.reducer;
