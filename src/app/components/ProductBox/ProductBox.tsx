@@ -1,10 +1,12 @@
 import React from 'react';
-import { Product } from 'api/products/getProducts.types';
+import { useDispatch, useSelector } from 'react-redux';
 import clsx from 'clsx';
 import { Rating } from '@material-ui/lab';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Box } from '@material-ui/core';
 
+import { Product } from 'api/products/getProducts.types';
+import { setModalOpen, setProduct } from 'store/products/products.slice';
 import { useStyles } from './styles';
 
 interface ProductBoxProps {
@@ -14,13 +16,21 @@ interface ProductBoxProps {
 
 const ProductBox = ({ product }: ProductBoxProps) => {
   const classes = useStyles();
+  const dispatch = useDispatch();
   const { active, description, image, name, promo, rating } = product;
 
-  const handleProductBoxClick = () => {};
+  const handleProductBoxClick = () => {
+    dispatch(setProduct(product));
+    dispatch(setModalOpen(true));
+  };
 
   return (
     <Card className={classes.root}>
-      <CardActionArea className={classes.actionArea}>
+      <CardActionArea 
+        className={classes.actionArea}
+        disabled={!active}
+        onClick={handleProductBoxClick}
+      >
         {promo && active && <Box className={classes.promoBadge}>Promo</Box>}
         <CardMedia
           className={clsx(classes.media, {[classes.mediaDisabled]: !active})}

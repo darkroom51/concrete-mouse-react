@@ -15,6 +15,8 @@ interface ProductsState {
   pageCurrent: number
   pageNext: string
   pagePrev: string
+  product: Product | null
+  modalOpen: boolean
 };
 
 const ProductsInitialState: ProductsState = {
@@ -31,7 +33,9 @@ const ProductsInitialState: ProductsState = {
   pageCount: 0,
   pageCurrent: 0,
   pageNext: '',
-  pagePrev: ''
+  pagePrev: '',
+  product: null,
+  modalOpen: false,
 };
 
 const productsSlice = createSlice({
@@ -74,6 +78,12 @@ const productsSlice = createSlice({
         page: action.payload,
       };
     },
+    setProduct(state, action: PayloadAction<Product>) {
+      state.product = action.payload;
+    },
+    setModalOpen(state, action: PayloadAction<boolean>) {
+      state.modalOpen = action.payload;
+    },
   }
 });
 
@@ -84,7 +94,9 @@ export const {
   setSearchParam,
   setActiveParam,
   setPromoParam,
-  setPageParam
+  setPageParam,
+  setProduct,
+  setModalOpen
 } = productsSlice.actions;
 
 export default productsSlice.reducer;

@@ -10,3 +10,5 @@ export const selectPageCount = createSelector(productsSelector, ({ pageCount }) 
 export const selectPageCurrent = createSelector(productsSelector, ({ pageCurrent }) => pageCurrent);
 export const selectPagePrev = createSelector(productsSelector, ({ pagePrev }) => pagePrev);
 export const selectPageNex = createSelector(productsSelector, ({ pagePrev }) => pagePrev);
+export const selectProduct = createSelector(productsSelector, ({ product }) => product);
+export const selectModalOpen = createSelector(productsSelector, ({ modalOpen }) => modalOpen);
