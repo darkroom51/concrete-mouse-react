@@ -1,9 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { AxiosResponse } from 'axios';
 
+import { AppThunk } from 'store/store';
 import { getProducts } from 'api/products/getProducts';
 import { GetProductsParams, Product, GetProductsResponse } from 'api/products/getProducts.types';
-import { AppThunk } from 'store/store';
+import { PRODUCTS_LIMIT_PER_PAGE } from 'constants/products';
 
 interface ProductsState {
   list: Product[]
@@ -22,7 +23,7 @@ const ProductsInitialState: ProductsState = {
   error: null,
   reqParams: {
     search: '',
-    limit: 3,
+    limit: PRODUCTS_LIMIT_PER_PAGE,
     page: 1,
     promo: undefined,
     active: undefined
