@@ -1,4 +1,5 @@
 {
+  "homepage": "http://darkroom51.github.io/concrete-mouse-react/",
   "name": "react-interview-starter-ts",
   "version": "0.1.0",
   "private": true,
@@ -13,7 +14,9 @@
     "e2e:run:firefox": "cd e2e && ./node_modules/.bin/cypress run --browser firefox && cd ..",
     "e2e:run:chrome": "cd e2e && ./node_modules/.bin/cypress run --browser chrome && cd ..",
     "e2e:wait-and-run:firefox": "./node_modules/.bin/wait-on http://localhost:1337/ && npm run e2e:run:firefox",
-    "e2e:wait-and-run:chrome": "./node_modules/.bin/wait-on http://localhost:1337/ && npm run e2e:run:chrome"
+    "e2e:wait-and-run:chrome": "./node_modules/.bin/wait-on http://localhost:1337/ && npm run e2e:run:chrome",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [
@@ -63,6 +66,7 @@
     "@types/testing-library__jest-dom": "5.9.2",
     "cross-env": "7.0.2",
     "full-icu": "1.3.1",
+    "gh-pages": "^3.1.0",
     "http-server": "0.12.3",
     "wait-on": "5.2.0"
   }
