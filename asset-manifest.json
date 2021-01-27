@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.js": "/concrete-mouse-react/static/js/main.c4868b5f.chunk.js",
+    "main.js.map": "/concrete-mouse-react/static/js/main.c4868b5f.chunk.js.map",
+    "runtime-main.js": "/concrete-mouse-react/static/js/runtime-main.026f62de.js",
+    "runtime-main.js.map": "/concrete-mouse-react/static/js/runtime-main.026f62de.js.map",
+    "static/js/2.c717e241.chunk.js": "/concrete-mouse-react/static/js/2.c717e241.chunk.js",
+    "static/js/2.c717e241.chunk.js.map": "/concrete-mouse-react/static/js/2.c717e241.chunk.js.map",
+    "index.html": "/concrete-mouse-react/index.html",
+    "precache-manifest.a50a9c3e26a26c1a49302efdd14fb75b.js": "/concrete-mouse-react/precache-manifest.a50a9c3e26a26c1a49302efdd14fb75b.js",
+    "service-worker.js": "/concrete-mouse-react/service-worker.js",
+    "static/js/2.c717e241.chunk.js.LICENSE.txt": "/concrete-mouse-react/static/js/2.c717e241.chunk.js.LICENSE.txt",
+    "static/media/bridge-to-enlightenment.jpg": "/concrete-mouse-react/static/media/bridge-to-enlightenment.c37547a2.jpg",
+    "static/media/join-tsh-io.svg": "/concrete-mouse-react/static/media/join-tsh-io.44c89fc4.svg",
+    "static/media/no-results-ico.svg": "/concrete-mouse-react/static/media/no-results-ico.a8f1c989.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.026f62de.js",
+    "static/js/2.c717e241.chunk.js",
+    "static/js/main.c4868b5f.chunk.js"
+  ]
+}
