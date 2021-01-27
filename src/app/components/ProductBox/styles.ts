@@ -54,11 +54,13 @@ export const useStyles = makeStyles((theme) => ({
     color: '#1A1B1D',
     fontSize: '18px',
     margin: '0 0 8px',
+    fontFamily: 'Nunito',
   },
   textSecondary: {
     color: '#9194A5',
     fontSize: '14px',
     margin: '0',
+    fontFamily: 'Nunito',
   },
   rating: {
     padding: '0 0 16px 12px',
