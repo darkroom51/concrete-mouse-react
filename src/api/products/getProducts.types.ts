@@ -2,8 +2,8 @@ export interface GetProductsParams {
   search?: string;
   limit?: number;
   page?: number;
-  promo?: boolean;
-  active?: boolean;
+  promo?: boolean | undefined
+  active?: boolean | undefined
 }
 
 export interface GetProductsResponse {

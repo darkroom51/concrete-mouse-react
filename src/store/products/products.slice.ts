@@ -60,13 +60,13 @@ const productsSlice = createSlice({
         search: action.payload,
       };
     },
-    setActiveParam(state, action: PayloadAction<boolean>) {
+    setActiveParam(state, action: PayloadAction<boolean | undefined>) {
       state.reqParams = {
         ...state.reqParams,
         active: action.payload,
       };
     },
-    setPromoParam(state, action: PayloadAction<boolean>) {
+    setPromoParam(state, action: PayloadAction<boolean | undefined>) {
       state.reqParams = {
         ...state.reqParams,
         promo: action.payload,

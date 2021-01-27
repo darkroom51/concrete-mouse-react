@@ -23,11 +23,11 @@ const Search = () => {
   };
 
   const handleActiveFilterChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(setActiveParam(target.checked));
+    dispatch(setActiveParam(target.checked ? true : undefined));
   };
 
   const handlePromoFilterChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(setPromoParam(target.checked));
+    dispatch(setPromoParam(target.checked  ? true : undefined));
   };
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement> | any) => {
